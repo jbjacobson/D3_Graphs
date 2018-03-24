@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <style>
+   .wgt-control { width: 600px; height: 300px; border:1px solid gray}
+   body{ font-family: sans-serif }
+   .dark{ background:black}
+  </style>
+
+<!-- styles relevant to the actual graphs -->
+  <style>
+  /*common*/
+  svg{
+    font-family: sans-serif;
+  }
+  .title{
+    font-weight: 700;
+    font-size: 13pt;
+  }
+  .dark svg{
+    background: #1F1F1F;
+  }
+  text{
+    fill:black;
+  }
+  .dark text{
+    fill:#CCC;
+  }
+  .dark label{
+    color: #CCC;
+  }
+  .axis line{
+    shape-rendering: crispedges;
+  }
+  .dark .axis line,
+  .dark .axis path{
+    stroke:#CCC;
+  }
+  /*bar chart specific*/
+  .bar {
+    fill: steelblue;
+  }
+  
+  .sortCheckbox{
+    position:absolute;
+    right: 10px;
+    top: 15px;
+    font-size: 9pt;
+  }
+  </style>
+
+<!-- JQuery resizable stuff, only needed for the widget container -->
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+
+  <script src="https://d3js.org/d3.v4.min.js"></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js'></script>
+  
+</head>
+<body class="dark">
+  <button id="lightTheme">light</button> <button id="darkTheme">dark</button>
+  <div class='wgt-control' id='wgt1'>
+    <div class='wgt-content' style='width:100%; height:100%'></div>
+  </div>
+  <br/>
+  <br/>
+  <div class='wgt-control' id='wgt1'>
+    <div class='wgt-content' style='width:100%; height:100%'></div>
+  </div>
+  <br/>
+  <br/>
+  <div id='sizeDisplay'></div>
+  <div id='timerangeDisplay'></div>
+ <script src='16_barchart_inverted.js'></script>
+</body>
+</html>

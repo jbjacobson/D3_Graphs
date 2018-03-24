@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <style>
+   .wgt-control { width: 600px; height: 300px; padding: 0.5em; border:1px solid gray}
+   body{font-family: sans-serif}
+  </style>
+
+<!-- styles relevant to the actual graphs -->
+  <style>
+  .area {
+    opacity: .15;
+  }
+  .line{
+      fill:none;
+  }
+  .point{
+    stroke:none;
+  }
+  .brush > .selection {
+    stroke: none;
+  }
+  .zoom {
+    cursor: move;
+    fill: none;
+    pointer-events: all;
+  }
+  .axisLabel{
+    font-size: 10pt;
+  }
+  .dataGroup.hidden{
+    display: none;
+  }
+  svg{
+    font-family: sans-serif;
+  }
+  #legendBackground{
+    fill:rgba(255,255,255,.7);
+  }
+  .legendItem{
+    font-size: 10pt;
+    cursor: pointer;
+  }
+  .legendItem.hidden{
+    opacity: .3;
+  }
+  </style>
+
+<!-- JQuery resizable stuff, only needed for the widget container -->
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+
+  <script src="https://d3js.org/d3.v4.min.js"></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js'></script>
+  
+</head>
+<body>
+  titles and axis labels in model object <br/>
+  margins auto respond to outer element visibility
+  added layers within the graph to resolve z-order issues.
+  <div class='wgt-control' id='wgt1'>
+    <div class='wgt-content' style='width:100%; height:100%'></div>
+  </div>
+  <br/>
+  <br/>
+  adds graph title, y axis label,  and 'GB' suffix to y axis tick labels.
+  <div class='wgt-control' id='wgt2'>
+    <div class='wgt-content' style='width:100%; height:100%'></div>
+  </div>
+  <br/>
+  <div id='sizeDisplay'></div>
+  <div id='timerangeDisplay'></div>
+ <script src='09_textElements.js'></script>
+</body>
+</html>
